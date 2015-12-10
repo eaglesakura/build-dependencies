@@ -48,6 +48,8 @@ echo y | android update sdk -u -a -t "android-19"
 echo y | android update sdk -u -a -t "android-18"
 echo y | android update sdk -u -a -t "android-17"
 echo y | android update sdk -u -a -t "android-16"
+echo y | android update sdk -u -a -t "android-15"
+echo y | android update sdk -u -a -t "android-14"
 
 # Install Extra Repo
 echo y | android update sdk -u -a -t "extra-android-m2repository"
