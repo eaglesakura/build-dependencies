@@ -22,14 +22,6 @@ else
   fi
 fi
 
-# check platform-tools
-if type -P adb > /dev/null; then
-  echo "command OK : adb"
-else
-  echo "command NG : adb"
-  exit 1
-fi
-
 # Install Build Tools
 echo y | android update sdk -u -a -t "tools"
 echo y | android update sdk -u -a -t "platform-tools"
@@ -60,3 +52,14 @@ echo y | android update sdk -u -a -t "extra-google-google_play_services"
 echo y | android update sdk -u -a -t "extra-google-m2repository"
 echo y | android update sdk -u -a -t "extra-google-play_billing"
 echo y | android update sdk -u -a -t "extra-google-play_licensing"
+
+# Update Build Tools
+echo y | android update sdk -u -a -t "tools"
+
+# check platform-tools
+if type -P adb > /dev/null; then
+  echo "command OK : adb"
+else
+  echo "command NG : adb"
+  exit 1
+fi
