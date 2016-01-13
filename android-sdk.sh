@@ -5,19 +5,19 @@ if test "$ANDROID_HOME" = ""; then
   echo "var NG : ANDROID_HOME"
   exit 1
 else
-  echo "var OK : ANDROID_HOME"
+  echo "ANDROID_HOME=$ANDROID_HOME"
 fi
 
-# check tools
-if type -P android > /dev/null; then
-  echo "command OK : android"
+
+if [ -f "$ANDROID_HOME/tools/android" ]; then
+  echo "android command exist"
+  alias android="$ANDROID_HOME/tools/android"
 else
-  if type -P android.bat > /dev/null;then
-    alias android=android.bat
-    echo "alias android=android.bat"
-    echo "command OK : android"
+  if [ -f "$ANDROID_HOME/tools/android.bat" ]; then
+    echo "android.bat command exist"
+    alias android="$ANDROID_HOME/tools/android.bat"
   else
-    echo "command NG : android"
+    echo "android command not found..."
     exit 1
   fi
 fi
@@ -57,8 +57,8 @@ echo y | android update sdk -u -a -t "extra-google-play_licensing"
 echo y | android update sdk -u -a -t "tools"
 
 # check platform-tools
-if type -P adb > /dev/null; then
-  echo "command OK : adb"
+if [ -f "$ANDROID_HOME/platform-tools/adb" ]; then
+      echo "command OK : adb"
 else
   echo "command NG : adb"
   exit 1
