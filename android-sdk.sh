@@ -22,28 +22,65 @@ else
   fi
 fi
 
-# Install Build Tools
+# Install build tools
+install_build_tools() {
+
+echo "check build-tools-$1"
+
+if [ -e "$ANDROID_HOME/build-tools/$1" ]; then
+  echo "  * installed build-tools-$1"
+  return
+fi
+
+echo y | android update sdk -u -a -t "build-tools-$1"
+
+}
+
+# Install platform
+install_platform() {
+echo "check build-tools-$1"
+
+if [ -e "$ANDROID_HOME/platforms/android-$1" ]; then
+  echo "  * installed SDK $1"
+  return
+fi
+
+echo y | android update sdk -u -a -t "android-$1"
+
+}
+
+echo "###################################"
+echo "#    install platform tools       #"
+echo "###################################"
 echo y | android update sdk -u -a -t "tools"
 echo y | android update sdk -u -a -t "platform-tools"
-echo y | android update sdk -u -a -t "build-tools-23.0.2"
-echo y | android update sdk -u -a -t "build-tools-23.0.1"
-echo y | android update sdk -u -a -t "build-tools-23.0.0"
-echo y | android update sdk -u -a -t "build-tools-22.0.1"
-echo y | android update sdk -u -a -t "build-tools-22.0.0"
 
-# Install Android SDK
-echo y | android update sdk -u -a -t "android-23"
-echo y | android update sdk -u -a -t "android-22"
-echo y | android update sdk -u -a -t "android-21"
-echo y | android update sdk -u -a -t "android-20"
-echo y | android update sdk -u -a -t "android-19"
-echo y | android update sdk -u -a -t "android-18"
-echo y | android update sdk -u -a -t "android-17"
-echo y | android update sdk -u -a -t "android-16"
-echo y | android update sdk -u -a -t "android-15"
-echo y | android update sdk -u -a -t "android-14"
+echo "###################################"
+echo "#    install build tools          #"
+echo "###################################"
+install_build_tools "23.0.2"
+install_build_tools "23.0.1"
+install_build_tools "23.0.0"
+install_build_tools "22.0.1"
+install_build_tools "22.0.0"
 
-# Install Extra Repo
+echo "###################################"
+echo "#    install platform sdk         #"
+echo "###################################"
+install_platform "23"
+install_platform "22"
+install_platform "21"
+install_platform "20"
+install_platform "19"
+install_platform "18"
+install_platform "17"
+install_platform "16"
+install_platform "15"
+install_platform "14"
+
+echo "###################################"
+echo "#    install extra repository     #"
+echo "###################################"
 echo y | android update sdk -u -a -t "extra-android-m2repository"
 echo y | android update sdk -u -a -t "extra-android-support"
 echo y | android update sdk -u -a -t "extra-google-admob_ads_sdk"
