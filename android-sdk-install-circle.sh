@@ -20,6 +20,6 @@ if [ -e "$REQUEST_SDK_PATH" ]; then
     echo "installed android sdk"
 else
     wget -O "$TEMP_INSTALL_PATH.tgz" "$SDK_URL"
-    tar xovfz "$TEMP_INSTALL_PATH.tgz"
+    tar xovfz "$TEMP_INSTALL_PATH.tgz" -C ~/
     rm "$TEMP_INSTALL_PATH.tgz"
 fi
