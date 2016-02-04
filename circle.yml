@@ -1,12 +1,12 @@
 checkout:
   post:
-    - rm -rf ~/android-sdk-linux
-    - rm -rf ~/android-sdk-linux.tmp
+    - rm -rf /home/ubuntu/android-sdk-linux
+    - rm -rf /home/ubuntu/android-sdk-linux.tmp
 machine:
   timezone:
     Asia/Tokyo
   environment:
-    ANDROID_HOME: ~/android-sdk-linux
+    ANDROID_HOME: /home/ubuntu/android-sdk-linux
 dependencies:
   override:
     - echo "Skip dependencies task"

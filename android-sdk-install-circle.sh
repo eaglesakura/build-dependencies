@@ -8,7 +8,7 @@ else
   echo "ANDROID_HOME=$ANDROID_HOME"
 fi
 
-REQUEST_SDK_PATH=~/android-sdk-linux
+REQUEST_SDK_PATH=/home/ubuntu/android-sdk-linux
 TEMP_INSTALL_PATH=$REQUEST_SDK_PATH.tmp
 SDK_URL=https://dl.google.com/android/android-sdk_r22-linux.tgz
 
