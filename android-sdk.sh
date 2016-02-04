@@ -9,11 +9,11 @@ else
 fi
 
 
-if [ -f "$ANDROID_HOME/tools/android" ]; then
+if [ -e "$ANDROID_HOME/tools/android" ]; then
   echo "android command exist"
   alias android="$ANDROID_HOME/tools/android"
 else
-  if [ -f "$ANDROID_HOME/tools/android.bat" ]; then
+  if [ -e "$ANDROID_HOME/tools/android.bat" ]; then
     echo "android.bat command exist"
     alias android="$ANDROID_HOME/tools/android.bat"
   else
