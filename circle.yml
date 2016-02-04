@@ -5,6 +5,8 @@ checkout:
 machine:
   timezone:
     Asia/Tokyo
+  environment:
+    ANDROID_HOME: ~/android-sdk-linux
 dependencies:
   override:
     - echo "Skip dependencies task"

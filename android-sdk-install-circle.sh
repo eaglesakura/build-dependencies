@@ -1,5 +1,13 @@
 #! /bin/sh
 
+# check env
+if test "$ANDROID_HOME" = ""; then
+  echo "var NG : ANDROID_HOME"
+  exit 1
+else
+  echo "ANDROID_HOME=$ANDROID_HOME"
+fi
+
 REQUEST_SDK_PATH=~/android-sdk-linux
 TEMP_INSTALL_PATH=$REQUEST_SDK_PATH.tmp
 SDK_URL=https://dl.google.com/android/android-sdk_r22-linux.tgz
@@ -19,7 +27,6 @@ fi
 echo "###################################"
 echo "#    update platform tools        #"
 echo "###################################"
-export ANDROID_HOME=$REQUEST_SDK_PATH
 wget -O temp.sh "https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/android-sdk.sh"
 chmod 755 temp.sh
 ./temp.sh
