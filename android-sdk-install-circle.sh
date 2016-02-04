@@ -22,4 +22,4 @@ echo "###################################"
 export ANDROID_HOME=$REQUEST_SDK_PATH
 wget -O temp.sh "https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/android-sdk.sh"
 chmod 755 temp.sh
-source ./temp.sh
+./temp.sh
