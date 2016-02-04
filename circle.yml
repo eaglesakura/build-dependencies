@@ -1,0 +1,18 @@
+checkout:
+  post:
+    - rm -rf ~/android-sdk-linux
+    - rm -rf ~/android-sdk-linux.tmp
+machine:
+  timezone:
+    Asia/Tokyo
+dependencies:
+  override:
+    - echo "Skip dependencies task"
+test:
+  override:
+    - echo "Skip test task"
+deployment:
+  canary:
+    branch: master
+    commands:
+      - sh -c "$(curl -fsSL https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/android-sdk-install-circle.sh)"
