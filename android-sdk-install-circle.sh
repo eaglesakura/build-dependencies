@@ -23,10 +23,3 @@ else
     tar xovfz "$TEMP_INSTALL_PATH.tgz"
     rm "$TEMP_INSTALL_PATH.tgz"
 fi
-
-echo "###################################"
-echo "#    update platform tools        #"
-echo "###################################"
-wget -O temp.sh "https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/android-sdk.sh"
-chmod 755 temp.sh
-./temp.sh

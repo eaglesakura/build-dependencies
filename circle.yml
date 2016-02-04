@@ -18,4 +18,4 @@ deployment:
     branch: master
     commands:
       - sh -c "$(curl -fsSL https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/android-sdk-install-circle.sh)"
-      - echo "ANDROID_HOME=$ANDROID_HOME"
+      - sh -c "$(curl -fsSL https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/android-sdk.sh)"
