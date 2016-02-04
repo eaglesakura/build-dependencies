@@ -58,25 +58,32 @@ echo y | android update sdk -u -a -t "platform-tools"
 echo "###################################"
 echo "#    install build tools          #"
 echo "###################################"
+# New build-tools
 install_build_tools "23.0.2"
-install_build_tools "23.0.1"
-install_build_tools "23.0.0"
-install_build_tools "22.0.1"
-install_build_tools "22.0.0"
+# Old build-tools
+# install_build_tools "22.0.1"
 
 echo "###################################"
 echo "#    install platform sdk         #"
 echo "###################################"
+# Android 6.0
 install_platform "23"
+# Android 5.1
 install_platform "22"
+# Android 5.0
 install_platform "21"
+# Android Wear
 install_platform "20"
+# Android 4.4
 install_platform "19"
+# Android 4.3
 install_platform "18"
+# Android 4.2
 install_platform "17"
+# Android 4.1
 install_platform "16"
+# Android 4.0.3
 install_platform "15"
-install_platform "14"
 
 echo "###################################"
 echo "#    install extra repository     #"
