@@ -20,4 +20,6 @@ echo "###################################"
 echo "#    update platform tools        #"
 echo "###################################"
 export ANDROID_HOME=$REQUEST_SDK_PATH
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/android-sdk.sh)"
+wget -O temp.sh "https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/android-sdk-install-circle.sh"
+chmod 755 temp.sh
+source ./temp.sh
