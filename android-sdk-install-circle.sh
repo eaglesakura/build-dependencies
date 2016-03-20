@@ -67,6 +67,19 @@ install() {
   echo "SUCCESS" > "$ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}/$1"
 }
 
+install_platform() {
+echo "check build-tools-$1"
+
+if [ -e "$ANDROID_HOME/platforms/android-$1" ]; then
+  echo "  * Installed SDK $1"
+  return
+fi
+
+echo y | android update sdk -u -a -t "android-$1"
+
+}
+
+
 echo "###################################"
 echo "#    install platform tools       #"
 echo "###################################"
@@ -82,23 +95,23 @@ echo "###################################"
 echo "#    install platform sdk         #"
 echo "###################################"
 # Android 6.0
-install "android-23"
+install_platform "23"
 # Android 5.1
-install "android-22"
+install_platform "22"
 # Android 5.0
-install "android-21"
+install_platform "21"
 # Android Wear
-install "android-20"
+install_platform "20"
 # Android 4.4
-install "android-19"
+install_platform "19"
 # Android 4.3
-install "android-18"
+install_platform "18"
 # Android 4.2
-install "android-17"
+install_platform "17"
 # Android 4.1
-install "android-16"
+install_platform "16"
 # Android 4.0.3
-install "android-15"
+install_platform "15"
 
 echo "###################################"
 echo "#    install extra repository     #"
