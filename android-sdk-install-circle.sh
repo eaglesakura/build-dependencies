@@ -58,13 +58,15 @@ mkdir $ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}
 ls -al $ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}
 
 install() {
-  if [ -e "$ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}/$1" ]; then
-    echo "  * Installed : $1"
+  TOOL_NAME=$1
+  CACHE_NAME=$2
+  if [ -e "$ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}/${CACHE_NAME}" ]; then
+    echo "  * Installed : ${TOOL_NAME} :: ${CACHE_NAME}"
     return
   fi
 
-  echo y | android update sdk -u -a -t "$1"
-  echo "SUCCESS" > "$ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}/$1"
+  echo y | android update sdk -u -a -t "${TOOL_NAME}"
+  echo "SUCCESS" > "$ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}/${CACHE_NAME}"
 }
 
 install_platform() {
@@ -83,9 +85,10 @@ echo y | android update sdk -u -a -t "android-$1"
 echo "###################################"
 echo "#    install platform tools       #"
 echo "###################################"
-install "build-tools-23.0.2"
-install "tools"
-install "platform-tools"
+install "build-tools-23.0.2" "build-tools-23.0.2"
+install "tools" "tools1"
+install "tools" "tools2"
+install "platform-tools" "platform-tools"
 
 echo "###################################"
 echo "#    install platform sdk         #"
@@ -112,8 +115,8 @@ install_platform "15"
 echo "###################################"
 echo "#    install extra repository     #"
 echo "###################################"
-install "extra-android-m2repository"
-install "extra-google-m2repository"
+install "extra-android-m2repository" "extra-android-m2repository"
+install "extra-google-m2repository" "extra-google-m2repository"
 
 # check platform-tools
 if [ -f "$ANDROID_HOME/platform-tools/adb" ]; then
