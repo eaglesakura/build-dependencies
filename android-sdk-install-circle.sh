@@ -7,9 +7,9 @@ else
   echo "ANDROID_HOME=$ANDROID_HOME"
 fi
 
-DEPENDENCIES_VERSION=20160320
+DEPENDENCIES_VERSION=20160320a
 TEMP_INSTALL_PATH=$ANDROID_HOME.tmp
-SDK_URL=https://dl.google.com/android/android-sdk_r22-linux.tgz
+SDK_URL=https://dl.google.com/android/android-sdk_r23-linux.tgz
 
 echo "#############################################"
 echo "#    Download Android SDK rev. ${DEPENDENCIES_VERSION} #"
