@@ -69,6 +69,18 @@ install() {
   echo "SUCCESS" > "$ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}/${CACHE_NAME}"
 }
 
+install_build_tools() {
+
+echo "check build-tools-$1"
+
+if [ -e "$ANDROID_HOME/build-tools/$1" ]; then
+  echo "  * installed build-tools-$1"
+  return
+fi
+
+echo y | android update sdk -u -a -t "build-tools-$1"
+
+}
 install_platform() {
 echo "check build-tools-$1"
 
@@ -85,10 +97,11 @@ echo y | android update sdk -u -a -t "android-$1"
 echo "###################################"
 echo "#    install platform tools       #"
 echo "###################################"
-install "tools" "tools_1"
 install "platform-tools" "platform-tools"
-install "build-tools-23.0.2" "build-tools-23.0.2"
+install "tools" "tools_1"
 install "tools" "tools_2"
+install "build-tools-23.0.2" "build-tools-23.0.2"
+# install_build_tools "23.0.2"
 
 echo "###################################"
 echo "#    install platform sdk         #"
