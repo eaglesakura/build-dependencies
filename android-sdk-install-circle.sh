@@ -7,7 +7,7 @@ else
   echo "ANDROID_HOME=$ANDROID_HOME"
 fi
 
-DEPENDENCIES_VERSION=20160320a
+DEPENDENCIES_VERSION=20160320b
 TEMP_INSTALL_PATH=$ANDROID_HOME.tmp
 SDK_URL=https://dl.google.com/android/android-sdk_r23-linux.tgz
 
@@ -85,10 +85,10 @@ echo y | android update sdk -u -a -t "android-$1"
 echo "###################################"
 echo "#    install platform tools       #"
 echo "###################################"
-install "build-tools-23.0.2" "build-tools-23.0.2"
-install "tools" "tools1"
-install "tools" "tools2"
+install "tools" "tools_1"
 install "platform-tools" "platform-tools"
+install "build-tools-23.0.2" "build-tools-23.0.2"
+install "tools" "tools_2"
 
 echo "###################################"
 echo "#    install platform sdk         #"
