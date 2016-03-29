@@ -1,5 +1,5 @@
 #! /bin/sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/circleci/android-sdk.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/circleci/install-android-sdk.sh)"
 
 if [ $? -ne 0 ]; then
     echo "Android SDK Install Failed."
