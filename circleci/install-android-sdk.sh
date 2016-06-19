@@ -7,7 +7,7 @@ else
   echo "ANDROID_HOME=$ANDROID_HOME"
 fi
 
-DEPENDENCIES_VERSION=20160609
+DEPENDENCIES_VERSION=20160619
 TEMP_INSTALL_PATH=$ANDROID_HOME.tmp
 SDK_URL=https://dl.google.com/android/android-sdk_r23-linux.tgz
 
@@ -100,6 +100,7 @@ echo "###################################"
 install "platform-tools" "platform-tools"
 install "tools" "tools_1"
 install "tools" "tools_2"
+install "build-tools-24" "build-tools-24"
 install "build-tools-23.0.3" "build-tools-23.0.3"
 install "build-tools-23.0.2" "build-tools-23.0.2"
 # install_build_tools "23.0.2"
@@ -107,6 +108,8 @@ install "build-tools-23.0.2" "build-tools-23.0.2"
 echo "###################################"
 echo "#    install platform sdk         #"
 echo "###################################"
+# Android N
+install_platform "24"
 # Android 6.0
 install_platform "23"
 # Android 5.1
