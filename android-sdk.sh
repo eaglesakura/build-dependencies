@@ -59,7 +59,7 @@ echo "###################################"
 echo "#    install build tools          #"
 echo "###################################"
 # New build-tools
-install_build_tools "24"
+install_build_tools "24.0.0"
 install_build_tools "23.0.3"
 # Old build-tools
 # install_build_tools "22.0.1"
