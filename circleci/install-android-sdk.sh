@@ -7,7 +7,7 @@ else
   echo "ANDROID_HOME=$ANDROID_HOME"
 fi
 
-DEPENDENCIES_VERSION=20160619b
+DEPENDENCIES_VERSION=20160630
 TEMP_INSTALL_PATH=$ANDROID_HOME.tmp
 SDK_URL=https://dl.google.com/android/android-sdk_r23-linux.tgz
 

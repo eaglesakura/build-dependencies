@@ -6,14 +6,13 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/circleci/invalidate-cache.sh)"
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/circleci/invalidate-cache.sh)"
+# if [ $? -ne 0 ]; then
+#     echo "Cache Ctrl Failed."
+#     exit 1
+# fi
 
-if [ $? -ne 0 ]; then
-    echo "Cache Ctrl Failed."
-    exit 1
-fi
-
-./gradlew dependencies
+./gradlew --refresh-dependencies dependencies
 
 if [ $? -ne 0 ]; then
     echo "dependencies check Failed."

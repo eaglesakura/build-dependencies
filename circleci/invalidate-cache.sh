@@ -1,5 +1,8 @@
 #! /bin/sh
 
+# not work
+exit 0
+
 mkdir ${BUILD_CACHEDIR}
 MAVEN_CHECKFILE=${BUILD_CACHEDIR}/es_maven_check.txt
 
