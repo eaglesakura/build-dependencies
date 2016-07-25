@@ -7,9 +7,9 @@ else
   echo "ANDROID_HOME=$ANDROID_HOME"
 fi
 
-DEPENDENCIES_VERSION=20160720
+DEPENDENCIES_VERSION=20160725
 TEMP_INSTALL_PATH=$ANDROID_HOME.tmp
-SDK_URL=https://dl.google.com/android/android-sdk_r23-linux.tgz
+SDK_URL=https://dl.google.com/android/android-sdk_r24-linux.tgz
 
 echo "#############################################"
 echo "#    Download Android SDK rev. ${DEPENDENCIES_VERSION} #"
@@ -56,42 +56,6 @@ fi
 
 mkdir $ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}
 ls -al $ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}
-
-install() {
-  TOOL_NAME=$1
-  CACHE_NAME=$2
-  if [ -e "$ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}/${CACHE_NAME}" ]; then
-    echo "  * Installed : ${TOOL_NAME} :: ${CACHE_NAME}"
-    return
-  fi
-
-  echo y | android update sdk -u -a -t "${TOOL_NAME}"
-  echo "SUCCESS" > "$ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}/${CACHE_NAME}"
-}
-
-install_build_tools() {
-
-echo "check build-tools-$1"
-
-if [ -e "$ANDROID_HOME/build-tools/$1" ]; then
-  echo "  * installed build-tools-$1"
-  return
-fi
-
-echo y | android update sdk -u -a -t "build-tools-$1"
-
-}
-install_platform() {
-echo "check build-tools-$1"
-
-if [ -e "$ANDROID_HOME/platforms/android-$1" ]; then
-  echo "  * Installed SDK $1"
-  return
-fi
-
-echo y | android update sdk -u -a -t "android-$1"
-
-}
 
 echo "###################################"
 echo "#    install Licence Files        #"
