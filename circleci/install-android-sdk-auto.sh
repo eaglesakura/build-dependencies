@@ -31,6 +31,12 @@ else
 fi
 
 ls -al ${ANDROID_HOME}
+ls -al ${ANDROID_HOME}/licenses
+echo "###################################"
+echo "#            LICENSE              #"
+echo "###################################"
+echo ${ANDROID_HOME}/licenses/android-sdk-license
+echo ${ANDROID_HOME}/licenses/android-sdk-preview-license
 
 echo "###################################"
 echo "#    Install Android SDK          #"
@@ -65,8 +71,8 @@ echo "###################################"
 echo "#    install Licence Files        #"
 echo "###################################"
 mkdir ${ANDROID_HOME}/licenses
-echo "8933bad161af4178b1185d1a37fbf41ea5269c55" > ${ANDROID_HOME}/android-sdk-license
-echo "84831b9409646a918e30573bab4c9c91346d8abd" > ${ANDROID_HOME}/android-sdk-preview-license
+echo "8933bad161af4178b1185d1a37fbf41ea5269c55" > ${ANDROID_HOME}/licenses/android-sdk-license
+echo "84831b9409646a918e30573bab4c9c91346d8abd" > ${ANDROID_HOME}/licenses/android-sdk-preview-license
 
 # check platform-tools
 if [ -f "$ANDROID_HOME/platform-tools/adb" ]; then
