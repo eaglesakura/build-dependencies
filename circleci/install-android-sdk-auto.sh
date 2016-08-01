@@ -7,6 +7,10 @@ else
   echo "ANDROID_HOME=$ANDROID_HOME"
 fi
 
+export PATH=${PATH}:$ANDROID_HOME/platform-tools
+export PATH=${PATH}:$ANDROID_HOME/tools
+export PATH=${PATH}:$ANDROID_HOME
+
 DEPENDENCIES_VERSION=20160725
 TEMP_INSTALL_PATH=$ANDROID_HOME.tmp
 SDK_URL=https://dl.google.com/android/android-sdk_r24-linux.tgz
