@@ -11,6 +11,6 @@
  * 事前にAndroid SDKを導入し、環境変数ANDROID_HOMEを設定済みである必要があります
  * 全ての依存を再取得するため、実行には時間がかかります
 
-<pre>
+```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/android-sdk.sh)"
-</pre>
+```

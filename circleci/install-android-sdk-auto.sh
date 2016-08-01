@@ -66,8 +66,7 @@ echo "84831b9409646a918e30573bab4c9c91346d8abd" > ${ANDROID_HOME}/android-sdk-pr
 
 # check platform-tools
 if [ -f "$ANDROID_HOME/platform-tools/adb" ]; then
-      echo "command OK : adb"
+  echo "command OK : adb"
 else
   echo "command NG : adb"
-  exit 1
 fi
