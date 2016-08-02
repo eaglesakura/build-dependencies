@@ -13,7 +13,7 @@ export PATH=${PATH}:$ANDROID_HOME
 
 DEPENDENCIES_VERSION=20160725
 TEMP_INSTALL_PATH=$ANDROID_HOME.tmp
-SDK_URL=https://dl.google.com/android/android-sdk_r24-linux.tgz
+SDK_URL=https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
 
 echo "#############################################"
 echo "#    Download Android SDK rev. ${DEPENDENCIES_VERSION} #"
