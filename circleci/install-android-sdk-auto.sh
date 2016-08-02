@@ -91,6 +91,7 @@ echo y | "$ANDROID_HOME/tools/android" update sdk -u -a -t "android-$1"
 }
 
 install_platform "24"
+install_platform "10"
 
 # check platform-tools
 if [ -f "$ANDROID_HOME/platform-tools/adb" ]; then
