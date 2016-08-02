@@ -11,6 +11,7 @@ export PATH=${PATH}:$ANDROID_HOME/platform-tools
 export PATH=${PATH}:$ANDROID_HOME/tools
 export PATH=${PATH}:$ANDROID_HOME
 
+# check latest https://developer.android.com/studio/index.html#downloads
 DEPENDENCIES_VERSION=20160725
 TEMP_INSTALL_PATH=$ANDROID_HOME.tmp
 SDK_URL=https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
@@ -74,6 +75,23 @@ mkdir ${ANDROID_HOME}/licenses
 echo "8933bad161af4178b1185d1a37fbf41ea5269c55" > ${ANDROID_HOME}/licenses/android-sdk-license
 echo "84831b9409646a918e30573bab4c9c91346d8abd" > ${ANDROID_HOME}/licenses/android-sdk-preview-license
 
+echo "###################################"
+echo "#        install Tools            #"
+echo "###################################"
+install() {
+  TOOL_NAME=$1
+  CACHE_NAME=$2
+  if [ -e "$ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}/${CACHE_NAME}" ]; then
+    echo "  * Installed : ${TOOL_NAME} :: ${CACHE_NAME}"
+    return
+  fi
+
+  echo y | android update sdk -u -a -t "${TOOL_NAME}"
+  echo "SUCCESS" > "$ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}/${CACHE_NAME}"
+}
+
+install "platform-tools" "platform-tools"
+install "tools" "tools"
 
 echo "###################################"
 echo "#   install Require Platforms     #"
