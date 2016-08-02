@@ -74,6 +74,24 @@ mkdir ${ANDROID_HOME}/licenses
 echo "8933bad161af4178b1185d1a37fbf41ea5269c55" > ${ANDROID_HOME}/licenses/android-sdk-license
 echo "84831b9409646a918e30573bab4c9c91346d8abd" > ${ANDROID_HOME}/licenses/android-sdk-preview-license
 
+
+echo "###################################"
+echo "#   install Require Platforms     #"
+echo "###################################"
+install_platform() {
+echo "check build-tools-$1"
+
+if [ -e "$ANDROID_HOME/platforms/android-$1" ]; then
+  echo "  * Installed SDK $1"
+  return
+fi
+
+echo y | "$ANDROID_HOME/tools/android" update sdk -u -a -t "android-$1"
+
+}
+
+install_platform "24"
+
 # check platform-tools
 if [ -f "$ANDROID_HOME/platform-tools/adb" ]; then
   echo "command OK : adb"
