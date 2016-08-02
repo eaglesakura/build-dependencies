@@ -12,7 +12,7 @@ export PATH=${PATH}:$ANDROID_HOME/tools
 export PATH=${PATH}:$ANDROID_HOME
 
 # check latest https://developer.android.com/studio/index.html#downloads
-DEPENDENCIES_VERSION=20160725
+DEPENDENCIES_VERSION=20160802
 TEMP_INSTALL_PATH=$ANDROID_HOME.tmp
 SDK_URL=https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
 
@@ -91,25 +91,7 @@ install() {
 }
 
 install "platform-tools" "platform-tools"
-install "tools" "tools"
-
-echo "###################################"
-echo "#   install Require Platforms     #"
-echo "###################################"
-install_platform() {
-echo "check build-tools-$1"
-
-if [ -e "$ANDROID_HOME/platforms/android-$1" ]; then
-  echo "  * Installed SDK $1"
-  return
-fi
-
-echo y | "$ANDROID_HOME/tools/android" update sdk -u -a -t "android-$1"
-
-}
-
-install_platform "24"
-install_platform "10"
+# install "tools" "tools"
 
 # check platform-tools
 if [ -f "$ANDROID_HOME/platform-tools/adb" ]; then
