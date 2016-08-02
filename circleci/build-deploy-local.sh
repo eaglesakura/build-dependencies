@@ -9,7 +9,7 @@ if [ $? -ne 0 ]; then
     echo "##############################################"
     echo "#               ERROR REPORT                 #"
     echo "##############################################"
-    cat outputs/lint-results-debug.xml
+    cat build/outputs/lint-results-debug.xml
     echo "Build Failed."
     exit 1
 fi
