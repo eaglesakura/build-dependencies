@@ -24,3 +24,11 @@ else
     unzip "/home/ubuntu/android-ndk.zip"
     mv "/home/ubuntu/android-ndk.tmp/android-ndk-${DEPENDENCIES_VERSION}" $ANDROID_NDK_HOME
 fi
+
+# check platform-tools
+if [ -f "$ANDROID_NDK_HOME/ndk-build" ]; then
+      echo "command OK : ndk-build"
+else
+  echo "command NG : ndk-build"
+  exit 1
+fi
