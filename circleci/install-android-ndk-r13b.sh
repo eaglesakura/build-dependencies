@@ -20,5 +20,5 @@ else
     mkdir "/home/ubuntu/android-ndk.tmp"
     cd "/home/ubuntu/android-ndk.tmp"
     unzip "/home/ubuntu/android-ndk.zip"
-    mv /home/ubuntu/android-ndk.tmp $ANDROID_NDK_HOME
+    mv "/home/ubuntu/android-ndk.tmp/android-ndk-r13b" $ANDROID_NDK_HOME
 fi
