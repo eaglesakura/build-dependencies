@@ -10,6 +10,7 @@ machine:
   environment:
     ANDROID_HOME: /home/ubuntu/android-sdk-linux
     ANDROID_NDK_HOME: /home/ubuntu/android-ndk-linux
+    PATH: "${ANDROID_NDK_HOME}"
 dependencies:
   override:
     - echo "Skip dependencies task"
@@ -20,6 +21,7 @@ deployment:
   canary:
     branch: master
     commands:
+      - echo $PATH
       - sh -c "$(curl -fsSL https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/circleci/install-android-ndk-r13b.sh)"
       - sh -c "$(curl -fsSL https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/circleci/install-android-sdk.sh)"
       - sh -c "$(curl -fsSL https://raw.githubusercontent.com/eaglesakura/build-dependencies/master/android-sdk.sh)"
