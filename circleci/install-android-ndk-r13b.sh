@@ -32,5 +32,3 @@ else
   echo "command NG : ndk-build"
   exit 1
 fi
-
-export PATH=$ANDROID_NDK_HOME:$PATH
