@@ -2,6 +2,8 @@ checkout:
   post:
     - rm -rf /home/ubuntu/android-sdk-linux
     - rm -rf /home/ubuntu/android-sdk-linux.tmp
+    - rm -rf /home/ubuntu/android-ndk-linux
+    - rm -rf /home/ubuntu/android-ndk-linux.tmp
 machine:
   timezone:
     Asia/Tokyo
