@@ -7,8 +7,8 @@ else
   echo "ANDROID_NDK_HOME=$ANDROID_NDK_HOME"
 fi
 
-DEPENDENCIES_VERSION=r13b
-SDK_URL="https://dl.google.com/android/repository/android-ndk-${DEPENDENCIES_VERSION}-linux-x86_64.zip"
+DEPENDENCIES_VERSION="r13b"
+SDK_URL="https://dl.google.com/android/repository/android-ndk-$DEPENDENCIES_VERSION-linux-x86_64.zip"
 
 echo "#############################################"
 echo "#    Download Android NDK rev. ${DEPENDENCIES_VERSION} #"
