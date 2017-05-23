@@ -9,7 +9,6 @@ cp -r ./build/reports "$CIRCLE_ARTIFACTS"
 }
 
 # テスト実行
-./gradlew dependencies
 ./gradlew test
 
 
