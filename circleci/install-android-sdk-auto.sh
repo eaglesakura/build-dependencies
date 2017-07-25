@@ -85,7 +85,8 @@ echo "84831b9409646a918e30573bab4c9c91346d8abd" > ${ANDROID_HOME}/licenses/andro
 echo "###################################"
 echo "#        install Tools            #"
 echo "###################################"
-touch /root/.android/repositories.cfg
+mkdir ~/.android
+touch ~/.android/repositories.cfg
 sdkmanager --channel=3 "platform-tools"
 sdkmanager --channel=3 "build-tools;${ANDROID_BUILD_TOOLS_VERSION}"
 sdkmanager --channel=3 "platforms;android-${ANDROID_TARGET_SDK_VERSION}"
