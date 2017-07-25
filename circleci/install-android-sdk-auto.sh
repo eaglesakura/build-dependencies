@@ -7,8 +7,8 @@ else
   echo "ANDROID_HOME=$ANDROID_HOME"
 fi
 
-export PATH=${PATH}:$ANDROID_HOME/platform-tools/bin
 export PATH=${PATH}:$ANDROID_HOME/platform-tools
+export PATH=${PATH}:$ANDROID_HOME/tools/bin
 export PATH=${PATH}:$ANDROID_HOME/tools
 export PATH=${PATH}:$ANDROID_HOME
 
