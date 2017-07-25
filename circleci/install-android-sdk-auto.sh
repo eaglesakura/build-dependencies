@@ -34,8 +34,7 @@ else
 
     wget -O "/home/ubuntu/android-sdk.tgz" "$SDK_URL"
     mkdir "/home/ubuntu/android-sdk.tmp"
-    tar xovfz "/home/ubuntu/android-sdk.tgz" -C "/home/ubuntu/android-sdk.tmp"
-    mv /home/ubuntu/android-sdk.tmp/android-sdk-linux $ANDROID_HOME
+    unzip -d $ANDROID_HOME $HOME/android-sdk.zip > /dev/null
 fi
 
 ls -al ${ANDROID_HOME}
