@@ -19,7 +19,7 @@ export PATH=${PATH}:$ANDROID_HOME/tools
 export PATH=${PATH}:$ANDROID_HOME
 
 # check latest https://developer.android.com/studio/index.html#downloads
-DEPENDENCIES_VERSION=20160802
+DEPENDENCIES_VERSION=20170725
 TEMP_INSTALL_PATH=$ANDROID_HOME.tmp
 SDK_URL=https://dl.google.com/android/repository/tools_r25.2.5-linux.zip
 
