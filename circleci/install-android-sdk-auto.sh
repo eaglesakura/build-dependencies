@@ -32,7 +32,7 @@ if [ -e "$ANDROID_HOME" ]; then
 else
     echo "download android sdk"
 
-    wget -O "/home/ubuntu/android-sdk.tgz" "$SDK_URL"
+    wget -O "$HOME/android-sdk.zip" "$SDK_URL"
     mkdir "/home/ubuntu/android-sdk.tmp"
     unzip -d $ANDROID_HOME $HOME/android-sdk.zip > /dev/null
 fi
