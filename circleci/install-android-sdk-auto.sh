@@ -7,6 +7,7 @@ else
   echo "ANDROID_HOME=$ANDROID_HOME"
 fi
 
+export PATH=${PATH}:$ANDROID_HOME/platform-tools/bin
 export PATH=${PATH}:$ANDROID_HOME/platform-tools
 export PATH=${PATH}:$ANDROID_HOME/tools
 export PATH=${PATH}:$ANDROID_HOME
@@ -92,6 +93,9 @@ install() {
 
 install "platform-tools" "platform-tools"
 # install "tools" "tools"
+
+# all update
+sdkmanager --channel=3 --update
 
 # check platform-tools
 if [ -f "$ANDROID_HOME/platform-tools/adb" ]; then
