@@ -10,7 +10,7 @@ fi
 echo "#############################################"
 echo "#            Setup Env                      #"
 echo "#############################################"
-export ANDROID_BUILD_TOOLS_VERSION=26.0.0
+export ANDROID_BUILD_TOOLS_VERSION=26.0.1
 export ANDROID_TARGET_SDK_VERSION=26
 
 export PATH=${PATH}:$ANDROID_HOME/platform-tools
