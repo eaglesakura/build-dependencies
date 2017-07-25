@@ -7,6 +7,12 @@ else
   echo "ANDROID_HOME=$ANDROID_HOME"
 fi
 
+echo "#############################################"
+echo "#            Setup Env                      #"
+echo "#############################################"
+export ANDROID_BUILD_TOOLS_VERSION=26.0.0
+export ANDROID_TARGET_SDK_VERSION=26
+
 export PATH=${PATH}:$ANDROID_HOME/platform-tools
 export PATH=${PATH}:$ANDROID_HOME/tools/bin
 export PATH=${PATH}:$ANDROID_HOME/tools
@@ -15,7 +21,7 @@ export PATH=${PATH}:$ANDROID_HOME
 # check latest https://developer.android.com/studio/index.html#downloads
 DEPENDENCIES_VERSION=20160802
 TEMP_INSTALL_PATH=$ANDROID_HOME.tmp
-SDK_URL=https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
+SDK_URL=https://dl.google.com/android/repository/tools_r25.2.5-linux.zip
 
 echo "#############################################"
 echo "#    Download Android SDK rev. ${DEPENDENCIES_VERSION} #"
@@ -79,21 +85,13 @@ echo "84831b9409646a918e30573bab4c9c91346d8abd" > ${ANDROID_HOME}/licenses/andro
 echo "###################################"
 echo "#        install Tools            #"
 echo "###################################"
-install() {
-  TOOL_NAME=$1
-  CACHE_NAME=$2
-  if [ -e "$ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}/${CACHE_NAME}" ]; then
-    echo "  * Installed : ${TOOL_NAME} :: ${CACHE_NAME}"
-    return
-  fi
-
-  echo y | android update sdk -u -a -t "${TOOL_NAME}"
-  echo "SUCCESS" > "$ANDROID_HOME/.installed-${DEPENDENCIES_VERSION}/${CACHE_NAME}"
-}
-
-install "platform-tools" "platform-tools"
-# install "tools" "tools"
-
+touch /root/.android/repositories.cfg
+sdkmanager --channel=3 "platform-tools"
+sdkmanager --channel=3 "build-tools;${ANDROID_BUILD_TOOLS_VERSION}"
+sdkmanager --channel=3 "platforms;android-${ANDROID_TARGET_SDK_VERSION}"
+sdkmanager --channel=3 "extras;android;m2repository"
+sdkmanager --channel=3 "extras;google;google_play_services"
+sdkmanager --channel=3 "extras;google;m2repository"
 # all update
 sdkmanager --channel=3 --update
 
