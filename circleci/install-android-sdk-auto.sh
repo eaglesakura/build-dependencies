@@ -1,4 +1,5 @@
 #! /bin/sh
+echo "# install Android SDK #"
 # check env
 if test "$ANDROID_HOME" = ""; then
   echo "var NG : ANDROID_HOME"
