@@ -93,7 +93,7 @@ sdkmanager --channel=3 "extras;android;m2repository"
 sdkmanager --channel=3 "extras;google;google_play_services"
 sdkmanager --channel=3 "extras;google;m2repository"
 # all update
-sdkmanager --channel=3 --update
+echo y | sdkmanager --channel=3 --update
 
 # check platform-tools
 if [ -f "$ANDROID_HOME/platform-tools/adb" ]; then
