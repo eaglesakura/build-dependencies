@@ -11,9 +11,6 @@ fi
 echo "#############################################"
 echo "#            Setup Env                      #"
 echo "#############################################"
-export ANDROID_BUILD_TOOLS_VERSION=26.0.1
-export ANDROID_TARGET_SDK_VERSION=26
-
 export PATH=${PATH}:$ANDROID_HOME/platform-tools
 export PATH=${PATH}:$ANDROID_HOME/tools/bin
 export PATH=${PATH}:$ANDROID_HOME/tools
@@ -87,13 +84,9 @@ echo "#        install Tools            #"
 echo "###################################"
 mkdir ~/.android
 touch ~/.android/repositories.cfg
-echo y | sdkmanager --channel=3 "platform-tools"
-echo y | sdkmanager --channel=3 "build-tools;${ANDROID_BUILD_TOOLS_VERSION}"
-echo y | sdkmanager --channel=3 "platforms;android-${ANDROID_TARGET_SDK_VERSION}"
-echo y | sdkmanager --channel=3 "extras;android;m2repository"
-echo y | sdkmanager --channel=3 "extras;google;google_play_services"
-echo y | sdkmanager --channel=3 "extras;google;m2repository"
+
 # all update
+echo y | sdkmanager --channel=3 "platform-tools"
 echo y | sdkmanager --channel=3 --update
 
 # check platform-tools
